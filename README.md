@@ -26,3 +26,6 @@ What can i expect from final release?
 
 
 Special thanks to Fluxistence from the Official Klei Entertainment Discord for helping me understand how DST operates, and how Lua config files are structured and parsed.
+![bandicam 2022-01-23 18-37-20-174](https://user-images.githubusercontent.com/46138781/150702837-561f6236-296e-4e7a-a32a-b5e8a853f556.jpg)
+![bandicam 2022-01-23 18-37-30-421](https://user-images.githubusercontent.com/46138781/150702839-08fb1ae2-9f20-461c-954c-39f629d5f01b.jpg)
+![bandicam 2022-01-23 18-37-52-411](https://user-images.githubusercontent.com/46138781/150702840-495fd787-c71e-4f58-a0dc-01c875e47fa9.jpg)
