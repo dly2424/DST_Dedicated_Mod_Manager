@@ -8,7 +8,7 @@ Written and tested in Python3.
 The program includes a usable interface the newbiest of people can use. This is not final release, in fact this is still very much so in Beta.
 The program is currently in a very usable state, though i would recommend backing up your modoverrides.lua and dedicated_server_mods_setup.lua files before using just in case. 
 
-The program will:
+**The program will:**
 
 •Add mods to your dedicated server, and they will install when you run your server.
 
@@ -22,7 +22,8 @@ The program will:
 
 
 
-What can i expect from final release?
+
+**What can i expect from final release?**
 
 •Bug fixes and stability. More error handling.
 
