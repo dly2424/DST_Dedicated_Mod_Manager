@@ -1,12 +1,12 @@
 # DST_Dedicated_Mod_Manager
-A mod manager for Don't Starve Together Dedicated server. Linux and Windows compatible. Written in Python.
+A mod manager for Don't Starve Together Dedicated server. Linux and Windows compatible. Written in Python.  
 
-This is a mod manager for Don't Starve Together Dedicated servers. This is geared towards Linux users, though completely supported for Windows users.
+This is a mod manager for Don't Starve Together Dedicated servers. This is geared towards Linux users, though completely supported for Windows users.    
 
-Written and tested in Python3.
+Written and tested in Python3.  
 
 The program includes a usable interface the newbiest of people can use. This is not final release, in fact this is still very much so in Beta.
-The program is currently in a very usable state, though i would recommend backing up your modoverrides.lua and dedicated_server_mods_setup.lua files before using just in case. 
+The program is currently in a very usable state, though i would recommend backing up your modoverrides.lua and dedicated_server_mods_setup.lua files before using just in case.   
 
 **The program will:**
 ```
@@ -44,15 +44,23 @@ Special thanks to Fluxistence from the Official Klei Entertainment Discord for h
 ![bandicam 2022-01-23 18-37-52-411](https://user-images.githubusercontent.com/46138781/150702840-495fd787-c71e-4f58-a0dc-01c875e47fa9.jpg)
 
 # Setup
-Simply download the DST_mod_manager.py file and run it on your target machine with `python DST_mod_manager.py` or `python3 DST_mod_manager.py`
-Or by using something like Git, or Wget:
-`wget https://github.com/dly2424/DST_Dedicated_Mod_Manager/blob/main/DST_mod_manager.py`
+Simply download the DST_mod_manager.py file and run it on your target machine with  
+`python DST_mod_manager.py`  
+or   
+`python3 DST_mod_manager.py`    
+Or by using something like Git, or Wget:   
+`wget https://github.com/dly2424/DST_Dedicated_Mod_Manager/blob/main/DST_mod_manager.py`  
 
-The program uses Python3, so install it with your respective linux distro's package manager.
-Debian example:
-`sudo apt get python3`
-Also ensure you have pip installed for python3 as well!
-`sudo apt get python3-pip`
+The program uses Python3, so install it with your respective linux distro's package manager.  
+Debian example:  
+`sudo apt get python3`  
+Also ensure you have pip installed for python3 as well!   
+`sudo apt get python3-pip`  
+Pip requirements are automatically handled, apon missing a library, the program will alert you and ask you if you'd like the program to install them for you. 
+   
+Pip requirements:   
+Bs4(BeautifulSoup4) Web scraper, for getting mod names from Steam   
+Lupa Lua interpreter for python. To parse some lua files.  
 
 
 Tags for search:
