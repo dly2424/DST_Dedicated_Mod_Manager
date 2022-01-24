@@ -535,7 +535,7 @@ def generate_configs():
         temp_read = "configuration_options =" + lua.eval('new_string2')     #Get the string of lua table data!
 
         
-        new_code = temp_read.replace("  ","").strip()
+        new_code = temp_read.replace("  "," ").strip()
         if "configuration_options=" in new_code:
             list1 = slpp.decode(new_code.split("configuration_options=")[1].strip())
         elif "configuration_options =" in new_code:
