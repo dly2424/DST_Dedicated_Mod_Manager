@@ -438,45 +438,44 @@ def clear():
         system('clear')
     
 def setup():
-    print("You have entered the config\n")
-    print("1/3\n")
-    config["dedicated_server_mods_setup"] = input("Where is your mod dedicated_server_mods_setup.lua file located?\n\nIf you are uncertain, you may have installed it via this guide:\nhttps://dontstarve.fandom.com/wiki/Guides/Don%E2%80%99t_Starve_Together_Dedicated_Servers\nand it is likely located somewhere such as /home/(user)/steamapps/DST/mods/dedicated_server_mods_setup.lua\n\nExample path (dont use quotes): '/home/steam/steamapps/DST/mods/dedicated_server_mods_setup.lua'\n>")
-    if config["dedicated_server_mods_setup"] == "q" or config["dedicated_server_mods_setup"] == "quit":
-        sys.exit()    
-    if os.path.isfile(config["dedicated_server_mods_setup"]) == False:
-        print("That is incorrect. '{}' is not a valid path. You may have made a typo. Resetting config.".format(config["dedicated_server_mods_setup"]))
-        setup()
-    elif "dedicated_server_mods_setup.lua" not in config["dedicated_server_mods_setup"]:
-        print("That is incorrect. Please point me to the right file. What you type should end in 'dedicated_server_mods_setup.lua'. You may have made a typo. Resetting config.".format(config["dedicated_server_mods_setup"]))
-        setup()
-    else:
-        print("Sweet! Looks like that was it.\n")
+    print("\n\n\n\nYou have entered the config\n")
+    while True:
+        print("1/3\n")
+        config["dedicated_server_mods_setup"] = input("Where is your mod dedicated_server_mods_setup.lua file located?\n\nIf you are uncertain, you may have installed it via this guide:\nhttps://dontstarve.fandom.com/wiki/Guides/Don%E2%80%99t_Starve_Together_Dedicated_Servers\nand it is likely located somewhere such as /home/(user)/steamapps/DST/mods/dedicated_server_mods_setup.lua\n\nExample path (dont use quotes): '/home/steam/steamapps/DST/mods/dedicated_server_mods_setup.lua'\n>")
+        if config["dedicated_server_mods_setup"] == "q" or config["dedicated_server_mods_setup"] == "quit":
+            sys.exit()    
+        if os.path.isfile(config["dedicated_server_mods_setup"]) == False:
+            print("That is incorrect. '{}' is not a valid path. You may have made a typo.".format(config["dedicated_server_mods_setup"]))
+        elif "dedicated_server_mods_setup.lua" not in config["dedicated_server_mods_setup"]:
+            print("That is incorrect. Please point me to the right file. What you type should end in 'dedicated_server_mods_setup.lua'. You may have made a typo.".format(config["dedicated_server_mods_setup"]))
+        else:
+            print("Sweet! Looks like that was it.\n")
+            break
+    while True:
         print("2/3\n")
         config["modoverrides_path"] = input("Now i just need to know where your MASTER (aka overworld) modoverrides.lua is located.\n\nLocated at something like ~/.klei/DoNotStarveTogether/YourServerNameHere/Master/modoverrides.lua.\n\nExample path (dont use quotes): '/home/steam/.klei/DoNotStarveTogether/MyDediServer/Master/modoverrides.lua'\n>")
         if config["modoverrides_path"] == "q" or config["dedicated_server_mods_setup"] == "quit":
             sys.exit()    
         if os.path.isfile(config["modoverrides_path"]) == False:
             #clear()
-            print("That is incorrect. '{}' is not a valid path. You may have made a typo. Resetting config.".format(config["modoverrides_path"]))
-            setup()
+            print("That is incorrect. '{}' is not a valid path. You may have made a typo.".format(config["modoverrides_path"]))
         elif "modoverrides.lua" not in config["modoverrides_path"]:
-            print("That is incorrect. Please point me to the right file. What you type should end in 'modoverrides.lua'. You may have made a typo. Resetting config.")
-            setup()
+            print("That is incorrect. Please point me to the right file. What you type should end in 'modoverrides.lua'. You may have made a typo.")
         else:
-            #clear()
-            print(">{}\n".format(config["modoverrides_path"]))
             print("Sweet! Looks like that was it.\n")
-            print("3/3\n")
-            config["modoverrides_path2"] = input("Now i just need to know where your CAVES modoverrides.lua is located.\n\nLocated at something like ~/.klei/DoNotStarveTogether/YourServerNameHere/Caves/modoverrides.lua.\n\nExample path (dont use quotes): '/home/steam/.klei/DoNotStarveTogether/MyDediServer/Caves/modoverrides.lua'\n>")
-            if config["modoverrides_path2"] == "q" or config["dedicated_server_mods_setup"] == "quit":
-                sys.exit()    
-            if os.path.isfile(config["modoverrides_path2"]) == False:
-                #clear()
-                print("That is incorrect. '{}' is not a valid path. You may have made a typo. Resetting config.".format(config["modoverrides_path2"]))
-                setup()
-            elif "modoverrides.lua" not in config["modoverrides_path2"]:
-                print("That is incorrect. Please point me to the right file. What you type should end in 'modoverrides.lua'. You may have made a typo. Resetting config.")
-                setup()
+            break
+    while True:
+        print("3/3\n")
+        config["modoverrides_path2"] = input("Now i just need to know where your CAVES modoverrides.lua is located.\n\nLocated at something like ~/.klei/DoNotStarveTogether/YourServerNameHere/Caves/modoverrides.lua.\n\nExample path (dont use quotes): '/home/steam/.klei/DoNotStarveTogether/MyDediServer/Caves/modoverrides.lua'\n>")
+        if config["modoverrides_path2"] == "q" or config["dedicated_server_mods_setup"] == "quit":
+            sys.exit()    
+        if os.path.isfile(config["modoverrides_path2"]) == False:
+            print("That is incorrect. '{}' is not a valid path. You may have made a typo.".format(config["modoverrides_path2"]))
+        elif "modoverrides.lua" not in config["modoverrides_path2"]:
+            print("That is incorrect. Please point me to the right file. What you type should end in 'modoverrides.lua'. You may have made a typo.")
+        else:
+            print("Sweet! Looks like that was it.\n")
+            break
     clear()
     config["configured"] = True
     write_to_pickle()
@@ -535,7 +534,7 @@ def generate_configs():
         temp_read = "configuration_options =" + lua.eval('new_string2')     #Get the string of lua table data!
 
         
-        new_code = temp_read.replace("  "," ").strip()
+        new_code = temp_read.replace("  ","").strip()
         if "configuration_options=" in new_code:
             list1 = slpp.decode(new_code.split("configuration_options=")[1].strip())
         elif "configuration_options =" in new_code:
@@ -800,7 +799,7 @@ def main_run():
     global mods, config, configured, mod_dict
     if config["configured"] == False:
         #clear()
-        print("Hey there! Looks like this is your first time using the program. This program automatically installs, removes and configures mods for DST dedicated servers.\n\nI just need some basic information about your DST server.")
+        print("\n\n\n\n\nHey there! Looks like this is your first time using the program. This program automatically installs, removes and configures mods for DST dedicated servers.\n\nI just need some basic information about your DST server.")
         print("\nJust a heads up, i recommend backing up your dedicated_server_mods_setup.lua and modoverrides.lua files before using this program, as it does TRY to parse human edited text files, it isn't perfect (yet). This program is still in development and is only available right now for testing purposes before release. With that said, it is currently very stable and works well- with some smaller bugs. Enjoy the program!\n")
         setup()
     else:
